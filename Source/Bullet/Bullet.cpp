@@ -20,3 +20,9 @@ void Bullet::Move() {
 
 	bounds = proj.getGlobalBounds();
 }
+
+bool Bullet::OutOfBounds() {
+	if (pos.y < 0) return true;
+
+	return false;
+}

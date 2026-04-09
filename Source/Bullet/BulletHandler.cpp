@@ -1,4 +1,5 @@
 #include "BulletHandler.h"
+#include <iostream>
 
 void BulletHandler::AddBullet(sf::Vector2f pos) {
 	Bullet bullet = Bullet(pos);
@@ -11,16 +12,10 @@ void BulletHandler::UpdateBullets(sf::RenderWindow& window) {
 		bullets[i].Draw(window);
 		bullets[i].Move();
 	}
-}
 
-void BulletHandler::DestroyBullets() {
-	std::vector<Bullet> temp = bullets;
-
-	for (int i = 0; i < bullets.size(); i++) {
-		if (true) { // Change to when bullet should be destroyed
-			temp.erase(temp.begin() + i);
-		}
-	}
-
-	bullets = temp;
+	bullets.erase(
+		std::remove_if(bullets.begin(), bullets.end(),
+			[](Bullet& b) { return b.OutOfBounds() || b.shouldDestroy; }),
+		bullets.end()
+	);
 }

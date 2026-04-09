@@ -132,12 +132,16 @@
   <ItemGroup>
     <ClCompile Include="Source\Bullet\Bullet.cpp" />
     <ClCompile Include="Source\Bullet\BulletHandler.cpp" />
+    <ClCompile Include="Source\Enemy\Enemy.cpp" />
+    <ClCompile Include="Source\Enemy\EnemyHandler.cpp" />
     <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\Player\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Bullet\Bullet.h" />
     <ClInclude Include="Source\Bullet\BulletHandler.h" />
+    <ClInclude Include="Source\Enemy\Enemy.h" />
+    <ClInclude Include="Source\Enemy\EnemyHandler.h" />
     <ClInclude Include="Source\Game.h" />
     <ClInclude Include="Source\Player\Player.h" />
   </ItemGroup>
